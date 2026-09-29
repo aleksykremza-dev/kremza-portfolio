@@ -78,8 +78,39 @@ Poznań, Poland · [GitHub](https://github.com/aleksykremza-dev) · aleksykremza
 
 ## Open repositories
 
+- **[kremzapay-support-bot](https://github.com/aleksykremza-dev/kremzapay-support-bot)** — grounded RAG support bot for a payment operator: answers only from its own docs, cites the source, escalates to a human instead of guessing. FastAPI, Ollama + Qdrant (no paid APIs), Docker, pytest
+- **[payhub-support-rag](https://github.com/aleksykremza-dev/payhub-support-rag)** — bilingual (PL/EN) RAG assistant for merchant support with citations and confidence-based escalation. FastAPI, Qdrant, SQLite, pytest, eval suite
+- **[p24-docs-rag](https://github.com/aleksykremza-dev/p24-docs-rag)** — RAG Q&A over the public Przelewy24 API documentation: BeautifulSoup ingestion, Qdrant, FastAPI, Dockerfile + compose
 - **[invisible-prompt-lab](https://github.com/aleksykremza-dev/invisible-prompt-lab)** — LLM security research: hidden Unicode Tags instructions (prompt injection), encoder/decoder + detection, 17/17 tests (Python, pytest)
-- **[ai-automation-lab](https://github.com/aleksykremza-dev/ai-automation-lab)** — public learning lab: closing my skill gaps (RAG, agents, n8n) with working artifacts, in public
+- **[ai-automation-lab](https://github.com/aleksykremza-dev/ai-automation-lab)** — public learning lab: closing my skill gaps (RAG, agents, n8n) with working artifacts, in public; includes an n8n support-ticket triage workflow with an Ollama-driven test harness
+- **[automation-stack](https://github.com/aleksykremza-dev/automation-stack)** — reproducible Windows automation toolkit (Playwright MCP, PowerShell helpers, Computer Use), GitHub Actions CI, 26/26 tests
+
+## Skills map — requirement → evidence
+
+Written for recruiters who read a requirements list and want a link per line. Everything in the "Evidence" column is public code or a case study above; gaps are stated as gaps.
+
+| Requirement | Evidence | Status |
+|---|---|---|
+| Automating internal business processes | Case studies 1–3: CAD plugins, time tracking & payroll, recruitment pipeline — all in daily production use | production |
+| Designing modular, scalable systems | Recruitment pipeline: 6 independent pm2 services around one central sheet; payroll: entry / archive / master data split | production |
+| Python | [kremzapay-support-bot](https://github.com/aleksykremza-dev/kremzapay-support-bot), [payhub-support-rag](https://github.com/aleksykremza-dev/payhub-support-rag), [p24-docs-rag](https://github.com/aleksykremza-dev/p24-docs-rag), [invisible-prompt-lab](https://github.com/aleksykremza-dev/invisible-prompt-lab) | public code |
+| REST API design, OpenAPI | FastAPI services above expose auto-generated OpenAPI at `/docs`; Fastify/Express routes in Node.js projects | public code |
+| FastAPI | three RAG services above | public code |
+| Generative AI / LLM in production | RAG with citations and human escalation (3 repos); local llama 3.1 via Ollama parsing candidate messages in a live intake bot; Claude API for CV analysis in the recruitment pipeline | production + public code |
+| Local AI ecosystem (Ollama) | all three RAG services run on Ollama, no paid API | public code |
+| Databases | SQLite at scale: 4M-row company DB with FTS5 (case study 4); SQLite in Node.js services | production |
+| Scraping / process automation tooling | BeautifulSoup ([p24-docs-rag](https://github.com/aleksykremza-dev/p24-docs-rag)), Playwright ([automation-stack](https://github.com/aleksykremza-dev/automation-stack)), Puppeteer + cheerio in lead engine and recruitment bot | public code + production |
+| Docker | Dockerfile + docker-compose (Qdrant) in the RAG repos | public code |
+| CI/CD | GitHub Actions in [automation-stack](https://github.com/aleksykremza-dev/automation-stack) (Node + Playwright job) | public code |
+| Testing | pytest in 4 repos, `node --test` in Node.js services, eval suite for RAG answers | public code |
+| Git | this account; conventional commits | — |
+| PHP / Laravel / Symfony | none yet — basics, learning starts October 2026 | gap |
+| GraphQL | none yet | gap |
+| MySQL / PostgreSQL | none in production (SQLite instead); Postgres chosen in a design-stage project | gap |
+| Message brokers (RabbitMQ / Redis) | none; in-process queues only (p-queue) | gap |
+| ORM | none; raw SQL everywhere | gap |
+| LangChain / Langflow | none; RAG pipelines are hand-written | gap |
+| Elasticsearch / ELK | none; Qdrant for vector search, SQLite FTS5 for full-text | gap |
 
 ## Certificates
 
